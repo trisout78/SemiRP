@@ -8,23 +8,15 @@ import org.bukkit.event.EventHandler;
 import org.bukkit.WorldBorder;
 
 public class Main extends JavaPlugin {
-    private int worldBorder;
-
     @Override
     public void onEnable() {
-        System.out.println("§cBy Trisout");
         getCommand("Broadcast").setExecutor(new CommandBroadcast());
         getCommand("Annonce").setExecutor(new CommandAnnonce());
         getCommand("Mairie").setExecutor(new CommandMairie());
     }
 
-    @Override
-    public void onDisable() {
-        System.out.println("§cBy Trisout");
-    }
-
     @EventHandler
-    public void OnPlayerAdvancementDone(PlayerAdvancementDoneEvent event) {
+    public void onAdvancementDone(PlayerAdvancementDoneEvent event) {
         World world = Bukkit.getWorld("world");
         WorldBorder worldborder = world.getWorldBorder();
         double newsize = worldborder.getSize() + 1;
