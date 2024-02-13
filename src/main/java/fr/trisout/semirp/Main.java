@@ -22,10 +22,11 @@ public class Main extends JavaPlugin implements Listener {
 
     @EventHandler
     public void onAdvancementGranted(PlayerAdvancementDoneEvent event) {
-        getLogger().info("Advancement done");
         World world = Bukkit.getWorld("world");
         WorldBorder worldborder = world.getWorldBorder();
+        Player player = event.getPlayer();
         double newsize = worldborder.getSize() + 1;
         worldborder.setSize(newsize, 3);
+        getLogger().info("Advancement done by" + player + ". Setting world border to " + newsize + " blocks.");
     }
 }
