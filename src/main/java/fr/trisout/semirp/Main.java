@@ -14,7 +14,7 @@ public class Main extends JavaPlugin {
         getCommand("Broadcast").setExecutor(new CommandBroadcast());
         getCommand("Annonce").setExecutor(new CommandAnnonce());
         getCommand("Mairie").setExecutor(new CommandMairie());
-
+        saveDefaultConfig();
         // Load world border value from config
         this.worldBorder = this.getConfig().getInt("worldborder", 2000);
     }
