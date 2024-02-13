@@ -1,9 +1,11 @@
 package fr.trisout.semirp;
 
 import org.bukkit.Bukkit;
+import org.bukkit.World;
 import org.bukkit.event.player.PlayerAdvancementDoneEvent;
 import org.bukkit.plugin.java.JavaPlugin;
 import org.bukkit.event.EventHandler;
+import org.bukkit.WorldBorder;
 
 public class Main extends JavaPlugin {
     private int worldBorder;
@@ -14,9 +16,6 @@ public class Main extends JavaPlugin {
         getCommand("Broadcast").setExecutor(new CommandBroadcast());
         getCommand("Annonce").setExecutor(new CommandAnnonce());
         getCommand("Mairie").setExecutor(new CommandMairie());
-        saveDefaultConfig();
-        // Load world border value from config
-        this.worldBorder = this.getConfig().getInt("worldborder", 2000);
     }
 
     @Override
@@ -26,14 +25,9 @@ public class Main extends JavaPlugin {
 
     @EventHandler
     public void OnPlayerAdvancementDone(PlayerAdvancementDoneEvent event) {
-        // Increment world border value
-        this.worldBorder++;
-
-        // Set new world border
-        Bukkit.dispatchCommand(Bukkit.getConsoleSender(), "worldborder set " + this.worldBorder + " 3");
-
-        // Save new world border value to config
-        this.getConfig().set("worldborder", this.worldBorder);
-        this.saveConfig();
+        World world = Bukkit.getWorld("world");
+        WorldBorder worldborder = world.getWorldBorder();
+        double newsize = worldborder.getSize() + 1;
+        worldborder.setSize(newsize);
     }
 }
