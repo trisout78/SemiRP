@@ -30,7 +30,7 @@ public class Main extends JavaPlugin {
         this.worldBorder++;
 
         // Set new world border
-        Bukkit.dispatchCommand(Bukkit.getConsoleSender(), "worldborder set " + this.worldBorder);
+        Bukkit.dispatchCommand(Bukkit.getConsoleSender(), "worldborder set " + this.worldBorder + "3");
 
         // Save new world border value to config
         this.getConfig().set("worldborder", this.worldBorder);
