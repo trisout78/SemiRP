@@ -27,6 +27,6 @@ public class Main extends JavaPlugin implements Listener {
         Player player = event.getPlayer();
         double newsize = worldborder.getSize() + 1;
         worldborder.setSize(newsize, 3);
-        getLogger().info("Advancement done by" + player + ". Setting world border to " + newsize + " blocks.");
+        getLogger().info("Advancement done by " + player + ". Setting world border to " + newsize + " blocks.");
     }
 }
