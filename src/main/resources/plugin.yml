@@ -11,4 +11,4 @@ commands:
     permission: semirp.annonce.use
     description: annonce command
   mairie:
-    description: Se téléporter a la mairie
+    description: mairie command
