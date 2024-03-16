@@ -23,6 +23,7 @@ public class Main extends JavaPlugin implements Listener {
         getLogger().warning("- Aucun support ne sera fourni pour ce plugin");
         getLogger().warning("- Je ne suis pas responsable des dégâts que ce plugin pourrait causer");
         getLogger().warning("- Aucune mise a jour de ce plugin est garantie");
+        getLogger().warning("- Vous ne pouvez pas supprimer cet avertissement");
         getCommand("Broadcast").setExecutor(new CommandBroadcast());
         getCommand("Annonce").setExecutor(new CommandAnnonce());
         getCommand("Mairie").setExecutor(new CommandMairie());
