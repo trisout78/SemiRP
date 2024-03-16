@@ -14,6 +14,15 @@ public class Main extends JavaPlugin implements Listener {
     public void onEnable() {
         getServer().getPluginManager().registerEvents(this, this);
         getLogger().info("Plugin By Trisout");
+        getLogger().warning("Attention: Malgré le fait que ce plugin soit publique, merci de prendre en compte les information suivantes");
+        getLogger().warning("- Ce plugin est en développement, il est donc possible que des bugs soient présents");
+        getLogger().warning("- Vous devez impérativement me créditer si vous utilisez ce plugin");
+        getLogger().warning("- Vous ne pouvez pas vendre ce plugin");
+        getLogger().warning("- Vous devez, comment l'indique la licence, partager toute modification et sous la même licence");
+        getLogger().warning("- Vous ne pouvez pas retirer les crédits du plugin");
+        getLogger().warning("- Aucun support ne sera fourni pour ce plugin");
+        getLogger().warning("- Je ne suis pas responsable des dégâts que ce plugin pourrait causer");
+        getLogger().warning("- Aucune mise a jour de ce plugin est garantie");
         getCommand("Broadcast").setExecutor(new CommandBroadcast());
         getCommand("Annonce").setExecutor(new CommandAnnonce());
         getCommand("Mairie").setExecutor(new CommandMairie());
