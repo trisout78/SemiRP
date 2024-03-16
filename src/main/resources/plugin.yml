@@ -12,3 +12,4 @@ commands:
     description: annonce command
   mairie:
     description: mairie command
+    aliases: [spawn, sp]
