@@ -13,3 +13,6 @@ commands:
   mairie:
     description: mairie command
     aliases: [spawn, sp]
+  ping:
+    description: ping command
+    aliases: [pong, pg]

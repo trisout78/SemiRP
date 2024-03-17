@@ -28,6 +28,7 @@ public class Main extends JavaPlugin implements Listener {
         getLogger().warning("- Vous ne pouvez pas supprimer cet avertissement");
         getCommand("Broadcast").setExecutor(new CommandBroadcast());
         getCommand("Annonce").setExecutor(new CommandAnnonce());
+        getCommand("Ping").setExecutor(new CommandPing());
         getCommand("Mairie").setExecutor(new CommandMairie(this));
         saveDefaultConfig();
     }
@@ -39,7 +40,7 @@ public class Main extends JavaPlugin implements Listener {
         Player player = event.getPlayer();
         double newsize = worldborder.getSize() + 1;
         worldborder.setSize(newsize, 3);
-        getLogger().info("Advancement done by " + player + ". Setting world border to " + newsize + " blocks.");
+        getLogger().info("Advancement done by " + player.getName() + ". Setting world border to " + newsize + " blocks.");
     }
 
     @EventHandler
