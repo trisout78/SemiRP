@@ -45,13 +45,13 @@ public class Main extends JavaPlugin implements Listener {
     @EventHandler
     public void OnPlayerJoin(PlayerJoinEvent event) {
         Player player = event.getPlayer();
-        player.sendMessage("§7[§a§l+§r§7] " + player.getName());
+        event.setJoinMessage("§7[§a§l+§r§7] " + player.getName());
     }
 
     @EventHandler
     public void OnPlayerLeave(PlayerQuitEvent event) {
         Player player = event.getPlayer();
-        player.sendMessage("§7[§c§l-§r§7] " + player.getName());
+        event.setQuitMessage("§7[§c§l-§r§7] " + player.getName());
     }
 
     @Override
