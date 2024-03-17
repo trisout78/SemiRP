@@ -40,7 +40,7 @@ public class Main extends JavaPlugin implements Listener {
         getLogger().info("Advancement done by " + player + ". Setting world border to " + newsize + " blocks.");
     }
 
-    @EventHandler
+    @Override
     public void onDisable() {
         getLogger().info("Plugin By Trisout");
         getLogger().warning("Attention: Malgré le fait que ce plugin soit publique, merci de prendre en compte les information suivantes");
@@ -54,4 +54,5 @@ public class Main extends JavaPlugin implements Listener {
         getLogger().warning("- Aucune mise a jour de ce plugin est garantie");
         getLogger().warning("- Vous ne pouvez pas supprimer cet avertissement");
     }
+
 }
