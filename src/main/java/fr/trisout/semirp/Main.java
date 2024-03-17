@@ -1,6 +1,5 @@
 package fr.trisout.semirp;
 
-import com.google.errorprone.annotations.CanIgnoreReturnValue;
 import org.bukkit.Bukkit;
 import org.bukkit.World;
 import org.bukkit.entity.Player;
