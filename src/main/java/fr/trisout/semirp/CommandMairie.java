@@ -9,11 +9,20 @@ import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 
 public class CommandMairie implements CommandExecutor {
+    private final Main plugin;
+
+    public CommandMairie(Main plugin) {
+        this.plugin = plugin;
+    }
+
     @Override
     public boolean onCommand(CommandSender sender, Command cmd, String msg, String[] args) {
         if(sender instanceof Player) {
             Player player = (Player)sender;
-            Location location = new Location(Bukkit.getWorld("world"), -1179, 120, 1177);
+            double x = plugin.getConfig().getDouble("mairie_x");
+            double y = plugin.getConfig().getDouble("mairie_y");
+            double z = plugin.getConfig().getDouble("mairie_z");
+            Location location = new Location(Bukkit.getWorld("world"), x, y, z);
             player.teleport(location);
             player.playSound(player.getLocation(), Sound.valueOf("ENTITY_ENDERMAN_TELEPORT"), 1, 1);
             player.sendMessage("§aTéléporté à la mairie !");
