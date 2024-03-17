@@ -27,7 +27,8 @@ public class Main extends JavaPlugin implements Listener {
         getLogger().warning("- Vous ne pouvez pas supprimer cet avertissement");
         getCommand("Broadcast").setExecutor(new CommandBroadcast());
         getCommand("Annonce").setExecutor(new CommandAnnonce());
-        getCommand("Mairie").setExecutor(new CommandMairie());
+        getCommand("Mairie").setExecutor(new CommandMairie(this));
+        saveDefaultConfig();
     }
 
     @EventHandler
