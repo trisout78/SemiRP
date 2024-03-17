@@ -6,6 +6,7 @@ import org.bukkit.World;
 import org.bukkit.entity.Player;
 import org.bukkit.event.Listener;
 import org.bukkit.event.player.PlayerAdvancementDoneEvent;
+import org.bukkit.event.player.PlayerJoinEvent;
 import org.bukkit.plugin.java.JavaPlugin;
 import org.bukkit.event.EventHandler;
 import org.bukkit.WorldBorder;
@@ -40,6 +41,18 @@ public class Main extends JavaPlugin implements Listener {
         getLogger().info("Advancement done by " + player + ". Setting world border to " + newsize + " blocks.");
     }
 
+    @EventHandler
+    public void OnPlayerJoin(PlayerJoinEvent event) {
+        Player player = event.getPlayer();
+        player.sendMessage("§7[§a§l+§r§7] " + player.getName());
+    }
+
+    @EventHandler
+    public void OnPlayerLeave(PlayerJoinEvent event) {
+        Player player = event.getPlayer();
+        player.sendMessage("§7[§c§l-§r§7] " + player.getName());
+    }
+
     @Override
     public void onDisable() {
         getLogger().info("Plugin By Trisout");
@@ -54,5 +67,4 @@ public class Main extends JavaPlugin implements Listener {
         getLogger().warning("- Aucune mise a jour de ce plugin est garantie");
         getLogger().warning("- Vous ne pouvez pas supprimer cet avertissement");
     }
-
 }
