@@ -6,6 +6,7 @@ import org.bukkit.entity.Player;
 import org.bukkit.event.Listener;
 import org.bukkit.event.player.PlayerAdvancementDoneEvent;
 import org.bukkit.event.player.PlayerJoinEvent;
+import org.bukkit.event.player.PlayerQuitEvent;
 import org.bukkit.plugin.java.JavaPlugin;
 import org.bukkit.event.EventHandler;
 import org.bukkit.WorldBorder;
@@ -48,7 +49,7 @@ public class Main extends JavaPlugin implements Listener {
     }
 
     @EventHandler
-    public void OnPlayerLeave(PlayerJoinEvent event) {
+    public void OnPlayerLeave(PlayerQuitEvent event) {
         Player player = event.getPlayer();
         player.sendMessage("§7[§c§l-§r§7] " + player.getName());
     }
